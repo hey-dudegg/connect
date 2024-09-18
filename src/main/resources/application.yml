@@ -1,16 +1,15 @@
-# database ?? ??
+# database
 spring:
+  config:
+    import: optional:file:.env[.properties]
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    #    ?? PC? ????? Database??? ?? ???. 
-    url: jdbc:mysql://127.0.0.1:3306/connect # Database?? ?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-    #    mysql? ??? ??? ?? ??? ?? ???.
-    username: root
-    password: skrwl1
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   thymeleaf:
     cache: false
 
-  # spring data jpa ??
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
 
